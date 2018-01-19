@@ -1,0 +1,46 @@
+FORMAT: v1
+HOST: http://localhost
+
+# Donate 
+
+## Error States
+
+遵循 [HTTP Response Status Codes](https://github.com/for-GET/know-your-http-well/blob/master/status-codes.md) 标准.
+
+
+## Code Status 
+
+| Status  | Message                     |
+|:--------|-----------------------------|
+| `2000`  | success                     |
+
+
+## Login [/auth/login]
+
+### Create user session [POST]
+
++ Request ()
+  + Attributes
+      + email:  `your@example.com` (required)
+      + password:  `123456` (required)
+      + type:  `email` (required)
+
++ Request ()
+  + Attributes
+      + code:  `code` (required)
+
++ Response 200 (application/json)
+    ```js
+      {
+        "code": 2000, 
+        "data": {
+            "email": "your@example.com", 
+            "headimgurl": "", 
+            "id": 18031, 
+            "nickname": null, 
+            "type": "email", 
+            "unionid": "unionid"
+        }, 
+        "msg": "success"
+      }
+    ```
